@@ -14,50 +14,60 @@ Noun(Classes): Game, Players (1 & 2 & scores), (Math-Problems and Answers,)
 
 ## Task 2: Write their roles
 
-# Players_class: initializes Game and Player, Set Turn, Calculate and Store lives, Destroy players after die (This class contains the game loop and manage the current_player. It has user I/O)
-status: game (live, die), Players' turns(player 1, player2)turn, Answer correctness status, number of lives status
-Behaviours: Takes players' info and starts the game, sets turns, receives answer correctness status from Math class and counts remaining lives, announces final results and cleans up before die.
+# Game: initializes Player Group, Set Turn and reports lives_status (This class contains the game loop and manage the current_player. It has user Output)
+status: Players Group, Players' turns(player 1, player2)
+Behaviours: Get players' info and starts the turn, Change turns, reports lives-status
 
 What information is relevant to this class?
-  Players_Info, Game_Rounds, Current_Lives, Answer_Status,
+  Players_Info, Game_Rounds
 What will this calss needs in order to be initialized?
-  Game_Start, Players_info
+  Players_info
 What public methods will be defined on them?
-  None
+  None,
 
 
-# Math_class: initiates problem category, generates random problem and checks the asnswers  (this class has a user I/O)
-Status: players' request for problem, Answer correctness status
-Bahaviours: Checks player's request, Generates Math random Problems, receives answers and evaluates them, sends the correctness status to player
+# Players: Create Players, Calculate and Store lives
+status: lives status
+Behaviours:  receives players info and initiates them, set lives and updates it, checks if all lives lost and announce the loser and game over.
 
 What information is relevant to this class?
-  Players_Request, Input_Numbers, Input_Answers, Answer_Status
+  Players_Info,
 What will this calss needs in order to be initialized?
-  Players_Request, Input_Numbers
+  Players_info
+What public methods will be defined on them?
+  Reducing lives
+
+
+# Math: generates random problem and the asnswer
+Status: Request for Question
+Bahaviours: Receives request, Generates Math random Question and gives answer
+
+What information is relevant to this class?
+  Question_Request
+What will this calss needs in order to be initialized?
+  Request
 What public methods will be defined on them?
   None
 
 ## Methods:
 
-# Players_Class
+# Game
 
-Set(attributes): Players' name, Initial_Lives
-Set(turn): Player1 and Player 2
-Set(request): To Math_Class for a qiestion
-Get(Answer_Status): From Math_Class
-Set(Current_Lives): Depending on Answer_Status
-Set(Announce): If live ends
+Initialize the current player
+Report the lives_status
+Change turn
 
-# Math_Class
+# Players
 
-Set(attibutes): Players' name, Input Numbers
-Get(Turn_Status): From Player_Class
-Get(Request): From Player_Class
-Puts(question): To Console
-Get(Answer): from the Console
-Evaluate(Answer_status)
-Puts(message): To Console
-Set(Answer_Status): To Player_Class
+Set Players' name and Initial_Lives
+Update the lives
+Announce If all lives lost
+
+# Math
+
+Set(attibutes) for answer
+Generate Math question
+
 
 
 
