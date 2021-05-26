@@ -14,7 +14,7 @@ Noun(Classes): Game, Players (1 & 2 & scores), (Math-Problems and Answers,)
 
 ## Task 2: Write their roles
 
-# Game: initializes Player Group, Set Turn and reports lives_status (This class contains the game loop and manage the current_player. It has user Output)
+### Game: initializes Player Group, Set Turn and reports lives_status (This class contains the game loop and manage the current_player. It has user Output)
 status: Players Group, Players' turns(player 1, player2)
 Behaviours: Get players' info and starts the turn, Change turns, reports lives-status
 
@@ -26,7 +26,7 @@ What public methods will be defined on them?
   None,
 
 
-# Players: Create Players, Calculate and Store lives
+### Players: Create Players, Calculate and Store lives
 status: lives status
 Behaviours:  receives players info and initiates them, set lives and updates it, checks if all lives lost and announce the loser and game over.
 
@@ -38,7 +38,7 @@ What public methods will be defined on them?
   Reducing lives
 
 
-# Math: generates random problem and the asnswer
+### Math: generates random problem and the asnswer
 Status: Request for Question
 Bahaviours: Receives request, Generates Math random Question and gives answer
 
@@ -51,19 +51,19 @@ What public methods will be defined on them?
 
 ## Methods:
 
-# Game
+### Game
 
 Initialize the current player
 Report the lives_status
 Change turn
 
-# Players
+### Players
 
 Set Players' name and Initial_Lives
 Update the lives
 Announce If all lives lost
 
-# Math
+### Math
 
 Set(attibutes) for answer
 Generate Math question
