@@ -9,7 +9,7 @@ class Math_Questions
   def generate_questions
     first_number = rand(1...20)
     second_number = rand(1...20)
-    @answer = @first_number + @second_number
+    @answer = first_number + second_number
     "What does #{first_number} plus #{second_number} equal?"
   end
 end

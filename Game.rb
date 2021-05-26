@@ -10,7 +10,13 @@ class Game
   end
 
   def lives_status
-    puts "Lives Remaining ==> P1: #{@players[0].lives}/3  P2:#{@players[1].lives}/3"
+    puts "Lives Remaining ==> #{@players[0].name}: #{@players[0].lives}/3 vs #{@players[1].name}:#{@players[1].lives}/3"
+  end
+
+  def final_status
+    puts "Player #{@current_player.name} wins with a score of #{@current_player.lives}/3"
+    puts "-----------GAME OVER------------"
+    puts "Good bye!"
   end
 
   def change_turn

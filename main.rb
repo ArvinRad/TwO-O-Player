@@ -13,13 +13,13 @@ player1 = gets.chomp.to_s
 puts "Enter Player 2's name"
 player2 = gets.chomp.to_s
 
-player1 = players.new(player1)
-player2 = players.new(player2)
+player1 = Players.new(player1)
+player2 = Players.new(player2)
 
 # set current player
 game = Game.new(player1, player2)
 
-while player1.lives > 0 and player2.lives > 0 do
+while player1.lives > 0 && player2.lives > 0 do
   # generate question and answer
   puts "--- NEW TURN ---"
   question = Math_Questions.new
@@ -32,11 +32,18 @@ while player1.lives > 0 and player2.lives > 0 do
   # check answer
   answer = question.answer
   if (input != answer)
+    puts "#{game.current_player.name}: Seriously? No!"
     game.current_player.reduction
+  else puts "#{game.current_player.name}: Yes, you are correct!"
   end
 
-  game.lives_status
-
+  if player1.lives > 0 && player2.lives > 0
+    game.lives_status
+  end
+  
   # change turn
   game.change_turn
 end
+
+# Announce final result
+game.final_status

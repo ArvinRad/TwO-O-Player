@@ -1,6 +1,6 @@
 ## This is the Player_Class managing the players, initial and remaining lives
 
-class players
+class Players
   attr_accessor :name, :lives
 
   def initialize (name, lives = 3)
@@ -12,7 +12,6 @@ class players
     @lives -= 1
     if @lives == 0
       puts "#{@name}, you lose!"
-      puts "--- GAME OVER ---"
     end
   end
 end
